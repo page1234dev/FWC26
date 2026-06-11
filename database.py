@@ -2,7 +2,8 @@ import sqlite3
 from datetime import date
 from contextlib import contextmanager
 
-DB_PATH = "fwc26.db"
+import os
+DB_PATH = os.path.join(os.getenv("RAILWAY_VOLUME_MOUNT_PATH", "/data"), "fwc26.db")
 
 @contextmanager
 def get_conn():
