@@ -14,7 +14,9 @@ from apscheduler.schedulers.asyncio import AsyncIOScheduler
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-BOT_TOKEN = os.getenv("BOT_TOKEN", "8730389103:AAG5UlXsQ8ce__lokLor1i9Km4gDD4ujHMI")
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+if not BOT_TOKEN:
+    raise ValueError("BOT_TOKEN not set!")
 CHANNEL_USERNAME = "@FIFAWCUP_26"
 CHANNEL_LINK = "https://t.me/FIFAWCUP_26"
 TWITTER_LINK = "https://twitter.com/NGNTOKEN157667"
